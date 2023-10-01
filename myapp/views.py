@@ -11,7 +11,7 @@ def upload_video_chunk(request):
         video_chunk = request.FILES.get('video_chunk')
         if video_chunk:
             # Save the video chunk to disk
-            with open('media/videos/models.mp4', 'wb+') as destination:
+            with open('media/videos/video.webm', 'wb+') as destination:
                 for chunk in video_chunk.chunks():
                     destination.write(chunk)
             return JsonResponse({'status': 'success'})
